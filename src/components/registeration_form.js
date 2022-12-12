@@ -55,7 +55,8 @@ function RegistrationForm() {
                 confirmPassword:confirmPassword,
                 age:age,
                 phoneno:phoneno,
-                pay:pay
+                pay:pay,
+                batches:batches
             } 
         
         const newPostKey = push(child(ref(database), 'posts')).key;
@@ -63,12 +64,6 @@ function RegistrationForm() {
         updates['/' + newPostKey] = obj
         update(ref(database), updates); 
         location.replace("\success.html");
-        // ref.on('value', (snapshot) => {
-        //     console.log(snapshot.val());
-        //     location.replace("\success.html");
-        //   }, (errorObject) => {
-        //     console.log('The read failed: ' + errorObject.name);
-        //   }); 
         } 
     // const CompletePayment  = () => {
     //     console.log(firstName,lastName,email,password,confirmPassword,age,pay);
